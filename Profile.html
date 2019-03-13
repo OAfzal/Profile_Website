@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+
+<head>
+    <style>
+        p {
+            font-family: Cambria;
+            font-style: italic;
+            background-color: lightblue;
+            padding: 15px;
+            width: fit-content;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        #Intrest {
+            background-color: beige
+        }
+
+        h1 {
+            color: darkblue;
+        }
+
+        #fform {
+            background-color: darkcyan;
+        }
+
+        input[type="text"] {
+            border: 2px solid #474747;
+            background-color: wheat;
+        }
+
+        h2 {
+            color: darkblue
+        }
+
+        h3 {
+            color: darkblue;
+        }
+    </style>
+    <meta charset="utf-8">
+    <title>My Profile</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Osama Mohammed Afzal</h1>
+    <p style="font-family: Cambria">Attar-2, NUST H-12, Islamabad</p>
+    <p>Ghurrat Al Hilal Street, Al Faisaliyah, Jeddah</p>
+
+    <table border="1" width="50%">
+
+        <tr bgcolor="darkRed">
+            <td align="center">Click to Navigate</td>
+        </tr>
+        <tr>
+            <td><a href="#int">My Intrests</a></td>
+
+        </tr>
+        <tr>
+            <td><a href="#hob">My Hobbies</a></td>
+        </tr>
+        <tr>
+            <td><a href="#web">Websites I Like</a></td>
+        </tr>
+        </tr>
+        <tr>
+            <td><a href="#form">form</a></td>
+        </tr>
+
+    </table>
+    <br />
+    <br />
+
+
+    <table border="1px">
+
+        <colgroup>
+            <col span="1" style=background-color:darkred />
+            <col span="2" style="background-color:honeydew" />
+        </colgroup>
+        <tr>
+            <td align="center" colspan="3">About Me</td>
+        </tr>
+        <tr>
+            <td rowspan="6">
+                <img src="osama.jpg" width="150" height="175" usemap="#map">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">Arsenal Fan (Gooner!)</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                Born in Jeddah, Saudi Arabia
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">Nationality: Pakistani</td>
+        </tr>
+        <tr>
+            <td colspan="2"> Studying Computer Science at NUST-SEECS</td>
+        </tr>
+
+        <tr>
+            <td align="center">
+                <a href="https://www.linkedin.com/in/oafzal97" target="_blank"><img src="linkedin.png" width="25"></a>
+            </td>
+
+            <td align="center">
+                <a href="https://www.facebook.com/oafzal97" target="_blank"><img src="fb.png" width="25"></a>
+            </td>
+
+        </tr>
+
+    </table>
+
+    <map name="map">
+
+        <area shape="rect" coords="0,0,75,75" href="#int" />
+        <area shape="rect" coords="0,75,75,175" href="#hob" />
+        <area shape="rect" coords="75,0,150,75" href="#ml" />
+        <area shape="rect" coords="75,75,175,175" href="#web" />
+
+    </map>
+
+    <br />
+    <br />
+    <br />
+
+    <table border="1" style="border-collapse: collapse" bgcolor="black" id="Intrest">
+        <tr align="center">
+            <td id="int" colspan="2">
+                <h3>My Intrests</h3>
+            </td>
+        </tr>
+
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+
+            <td id="ml">
+                Machine Learning
+            </td>
+
+            <td>
+                <p>I am fascinated by ML and the way it has been revelutionizing
+                    <br>the way things are being done all around the world and the best
+                    <br>part is that every field be it finance or art ML can be used.
+                </p>
+            </td>
+
+        </tr>
+
+    </table>
+
+    <h2 id="hob">My Hobbies</h2>
+
+    <ol>
+
+        <li>
+            <h3>Android Development</h3>
+            <p>Developing Applications using Android Studio and various web API's.
+                <br>I believe in building applications which have a responsive UI and
+                <br>and a UX which is well planned.</p>
+
+        </li>
+
+        <li>
+
+            <h3>Reading</h3>
+            <p>I love reading books based on the themes: action,thrill and fantasy.
+                <br>Other then that i also like reading biographies and books related
+                <br> to history.Reading helps me to become a better person as i get to read and
+                <br>ponder over the deep lessons conveyed through those text.
+            </p>
+
+        </li>
+
+        <li>
+            <h3>Gaming</h3>
+            <p>Gaming is one of the best thing in my life.A few games I love playing:
+                <ul>
+                    <li>FIFA</li>
+                    <li>FORTNITE</li>
+                    <li>COD</li>
+                </ul>
+            </p>
+
+        </li>
+
+    </ol>
+
+    <table border="1" style="border-collapse: collapse">
+        <tr>
+            <th id="web" colspan="2">Websites I like</th>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://www.facebook.com" target="new">FaceBook</a>
+            </td>
+            <td>
+                <p>Facebook helps my socialize with my friends
+                    <br>and finding events happening nearby me
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://www.google.com.pk/" target="new">Google</a>
+            </td>
+            <td>
+                <p>Google Helps me with the task of finding info with just a few words.</p>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

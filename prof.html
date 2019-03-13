@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <style>
+        body,
+        html {
+
+            height: 100%;
+        }
+
+        .bg {
+
+            /* background-image: url("background_image.jpg"); */
+            /* background-image: url("blur.jpeg");
+            height: 100%;
+
+            background-position: center;
+            background-repeat: repeat-x; */
+            /* background-size: cover; */
+        }
+
+        .column {
+            width: 100%;
+            float: left;
+        }
+
+        .nav {
+
+            width: 15%;
+        }
+
+        ul {
+            font-family: Rubik, Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+            list-style-type: none;
+            background-color: black;
+            font-weight: bolder;
+            width: 200px;
+            margin-top: 10%;
+            margin-left: 5%;
+            padding: 0;
+            overflow: auto;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+
+        }
+
+        li a:hover {
+            background-color: darkblue;
+        }
+
+
+
+        .side {
+            width: 25%;
+            margin-top: 1.5%;
+            background-color: #f1f1f1;
+        }
+
+        .main {
+            width: 33%;
+            margin: 5px;
+            background-color: white;
+            /* background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%); */
+            opacity: 0.95;
+        }
+
+        .row::after {
+            display: table;
+            clear: both;
+        }
+
+        #ProfilePic {
+            margin-left: 25%;
+            margin-top: 25%;
+            display: block;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            border: white solid;
+        }
+
+        #aboutMe {
+            font-family: Rubik, Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+            text-align: center;
+            font-weight: bold;
+            color: darkblue;
+        }
+
+        .description {
+
+            text-align: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+        }
+
+        .contact-box {
+
+            background-color: darkblue;
+            color: white;
+            padding: 0.5%;
+            text-align: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .logos a {
+
+            color: black;
+        }
+
+        .logos a:hover {
+
+            color: darkblue;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="bg">
+
+        <div class="row">
+
+            <div class="column nav">
+                <ul>
+                    <li>
+                        <a href="">Home</a>
+                    </li>
+                    <li>
+                        <a href="">Skills</a>
+                    </li>
+                    <li>
+                        <a href="">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="column side">
+
+                <div>
+                    <img id="ProfilePic" src="ProfilePics/osama.png">
+                </div>
+
+                <h2 style="font-family: 'Courier New', Courier, monospace ;text-align:center;">
+                    Hi, I'm <span style="color:darkblue">Osama Afzal!</span>
+                </h2>
+
+                <div id="aboutMe">
+                    <p>
+                        Machine Learning Enthusiast
+                    </p>
+                    <p>
+                        Mobile Developer
+                    </p>
+                </div>
+
+                <hr>
+
+                <div class="description">
+                    <p>Studying Computer Science at NUST.<br> Mobile Developer based in Islamabad</p>
+                </div>
+
+                <div class="contact-box">
+                    <p>osama.afzal97@gmail.com</p>
+                    <p>+92-3361127-068</p>
+                </div>
+
+                <div class="logos" style="text-align: center;margin:2.5%;">
+
+                    <a href=""><i style="font-size:30px;margin-right: 2%" class="fab fa-facebook"></i></a>
+                    <a href=""><i style="font-size:30px;" class="fab fa-linkedin	"></i></a>
+
+
+                </div>
+
+
+            </div>
+            <div class="column main">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+</body>
+
+</html>

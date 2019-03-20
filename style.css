@@ -2,6 +2,7 @@ body,
 html {
 
     height: 100%;
+    /* background-color:#f1f1f1; */
 }
 
 .bg {
@@ -28,7 +29,7 @@ html {
 ul {
     font-family: Rubik, Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
     list-style-type: none;
-    background-color: black;
+    background-color: #f1f1f1;
     font-weight: bolder;
     width: 200px;
     margin-top: 10%;
@@ -39,7 +40,7 @@ ul {
 
 li a {
     display: block;
-    color: white;
+    color: black;
     padding: 8px 16px;
     text-decoration: none;
 
@@ -47,9 +48,8 @@ li a {
 
 li a:hover {
     background-color: darkblue;
+    color:white;
 }
-
-
 
 .side {
     width: 25%;
@@ -59,11 +59,25 @@ li a:hover {
 
 .main {
     width: 33%;
-    margin: 5px;
-    background-color: white;
-    /* background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%); */
-    opacity: 0.95;
+    margin: 1.5%;
+    padding: 1.0%;
+    background-color: #f1f1f1;
 }
+
+.education h1{
+
+    color: darkblue;
+    font-family: Rubik, Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+    font-weight: bold;
+}
+
+.education h2{
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+    margin:0px;
+}
+
 
 .row::after {
     display: table;

@@ -9,7 +9,7 @@
 
 </head>
 
-<body>
+<body onload="startTime()">
 
     <div class="bg">
 
@@ -30,7 +30,44 @@
                         <a href="">Contact</a>
                     </li>
                 </ul>
+                
+                <div id="timeContainer">
+                    
+                    <div id = "time">
+
+                    </div>
+
+                    <div id = "date">
+                        
+                    </div>
+                </div>
+
             </div>
+
+            <script>
+                    function startTime() {
+                      var d = new Date();
+                      h = d.getHours();
+                      m = d.getMinutes();
+                      s = d.getSeconds();
+                      m = checkTime(m);
+                      s = checkTime(s);
+                      document.getElementById('time').innerHTML =
+                      h + ":" + m + ":" + s;
+                      var t = setTimeout(startTime, 500);
+                    }
+                    function checkTime(i) {
+                      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+                      return i;
+                    }
+
+                    var date = new Date();
+
+                    months = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
+
+                    document.getElementById("date").innerHTML = months[date.getMonth()+1]+" "+date.getDay()+" "+date.getFullYear();
+
+            </script>
 
             <div class="column side">
 

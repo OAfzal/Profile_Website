@@ -126,3 +126,17 @@ li a:hover {
 
     color: darkblue;
 }
+
+#timeContainer{
+
+    color:white;
+    background-color: darkblue;
+    text-align: center;
+    font-size:xx-large;
+}
+
+#date{
+
+    font-size:large;
+
+}

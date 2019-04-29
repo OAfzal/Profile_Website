@@ -18,6 +18,11 @@
             /* margin:25px; */
         }
 
+        #contact i:hover {
+            color: white;
+            /* margin:25px; */
+        }
+
         #contact i {
             font-size: 35px;
             color: gold;
@@ -35,6 +40,24 @@
             background-color: #FE9900;
             color: white;
         }
+
+        .floating-menu {
+            background-color: gold;
+            width: 180px;
+            top: 70%;
+            right: 15px;
+            z-index: 100;
+            position: fixed;
+        }
+
+        @media screen and (max-width: 600px) {
+
+            .floating-menu {
+                background-color: gold;
+                width: 130px;
+                position: static;
+            }
+        }
     </style>
 
 
@@ -42,7 +65,7 @@
 
 <body>
 
-    <div id="header" class="w3-white w3-padding w3-center w3-container w3-top ">
+    <div id="header" class="w3-white w3-padding w3-center w3-container">
         <div class="w3-bar" id="nav-container">
             <span class="w3-Large  w3-mobile">
                 <a href="#home" class="active w3-bar-item w3-button w3-mobile nav-item w3-hover-black">HOME</a>
@@ -53,14 +76,6 @@
             </span>
         </div>
     </div>
-
-    <!-- <script>
-
-        nav_container = $(".nav-item").on("click", function () {
-            $(".active").removeClass("active");
-            $(this).addClass("active");
-        })
-    </script> -->
 
     <script>
 
@@ -98,8 +113,8 @@
     </script>
 
     <section id="home" class="w3-mobile w3-display-container w3-animate-opacity" style="background-color: black;">
-        <img class="mySlides" src="ProfilePics/coder.jpg" style="width:100%;height: 400px;">
-        <img class="mySlides" src="ProfilePics/traveler.jpg" style="width:100%;height: 400px;">
+        <img class="mySlides" src="ProfilePics/coder.jpg" style="width:100%;height: 100%;">
+        <img class="mySlides" src="ProfilePics/traveler.jpg" style="width:100%;height: 100%;">
     </section>
 
     <script>
@@ -118,6 +133,14 @@
             setTimeout(carousel, 4000); // Change image every 2 seconds
         }
     </script>
+
+    <div class="floating-menu w3-bar-block w3-mobile">
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">Home</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+    </div>
+
 
 
     <section id="about" class="w3-container w3-center w3-mobile " style="min-height: 300px;">
@@ -213,8 +236,8 @@
         <div class="w3-center w3-black w3-padding">
             <div>
                 <a href="https://www.facebook.com/oafzal97" target="_blank"> <i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/oafzal2/" target="_blank"> <i class="fab fa-instagram"></i></a
-                <a href="" target="_blank"> <i class="fas fa-at"></i></a>
+                <a href="https://www.instagram.com/oafzal2/" target="_blank"> <i class="fab fa-instagram"></i></a <a
+                    href="" target="_blank"> <i class="fas fa-at"></i></a>
             </div>
             <a class="twitter-timeline" data-width="250" data-height="350" data-theme="dark"
                 href="https://twitter.com/OAfzal2/lists/timeline?ref_src=twsrc%5Etfw">A Twitter List by OAfzal2</a>

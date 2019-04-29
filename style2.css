@@ -1,0 +1,56 @@
+#nav-box {
+    text-align: center;
+}
+
+nav {
+    height: 60px;
+    width: 100%;
+    background-color: black;
+    position: fixed;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+nav a {
+    margin-right: 25px;
+    color: white;
+    padding: 14px 30px;
+    text-decoration: none;
+    font-size: 150%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: background-color 0.5s;
+}
+
+nav a:hover {
+    background-color: #A51C1C;
+}
+
+.MeSection {
+
+    width: 100%;
+    position: relative;
+    top: 60px;
+    background-color: #f1f1f1;
+    height: 65%;
+    padding: 15px;
+
+}
+
+#MePic {
+    position: absolute;
+    left:30%;
+    top: 20%;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: white solid;
+}
+
+#MeText{
+    position: absolute;
+    left: 45%;
+    top: 20%;
+    background-color:blue;
+    width: 250px;
+    height:250px;
+}

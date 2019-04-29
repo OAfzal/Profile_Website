@@ -1,0 +1,233 @@
+<html>
+
+<head>
+    <title>Osama Mohammed Afzal | Computer Scientist</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+
+
+    <style>
+        #skills i {
+            font-size: 35px;
+            /* margin:25px; */
+        }
+
+        #contact i {
+            font-size: 35px;
+            color: gold;
+            margin: 15px;
+        }
+
+        .skillProg {
+            float: left;
+            margin: 30px;
+        }
+
+        .active,
+        .nav-item:hover {
+
+            background-color: #FE9900;
+            color: white;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div id="header" class="w3-white w3-padding w3-center w3-container w3-top ">
+        <div class="w3-bar" id="nav-container">
+            <span class="w3-Large  w3-mobile">
+                <a href="#home" class="active w3-bar-item w3-button w3-mobile nav-item w3-hover-black">HOME</a>
+                <a href="#about" class="w3-bar-item w3-button w3-mobile nav-item  w3-hover-black">ABOUT ME</a>
+                <a href="#skills" class="w3-bar-item w3-button w3-mobile nav-item  w3-hover-black">SKILLS</a>
+                <a href="#projects" class="w3-bar-item w3-button w3-mobile nav-item  w3-hover-black">PROJECTS</a>
+                <a href="#contact" class="w3-bar-item w3-button w3-mobile nav-item  w3-hover-black">CONTACT ME</a>
+            </span>
+        </div>
+    </div>
+
+    <!-- <script>
+
+        nav_container = $(".nav-item").on("click", function () {
+            $(".active").removeClass("active");
+            $(this).addClass("active");
+        })
+    </script> -->
+
+    <script>
+
+        // console.log($("#nav-container").find("a"));
+
+        var topMenu = $("#nav-container"),
+            topMenuHeight = topMenu.outerHeight() + 15,
+            // All list items
+            menuItems = topMenu.find("a"),
+            // Anchors corresponding to menu items
+            scrollItems = menuItems.map(function () {
+                var item = $($(this).attr("href"));
+                if (item.length) { return item; }
+            });
+
+        $(window).scroll(function () {
+            // Get container scroll position
+            var fromTop = $(this).scrollTop() + topMenuHeight;
+            console.log()
+
+            // Get id of current scroll item
+            var cur = scrollItems.map(function () {
+                if ($(this).offset().top < fromTop)
+                    return this;
+            });
+            // Get the id of the current element
+            cur = cur[cur.length - 1];
+            var id = cur && cur.length ? cur[0].id : "";
+            // Set/remove active class
+            menuItems
+                .removeClass("active")
+                .end().filter("[href='#" + id + "']").addClass("active");
+        });
+
+    </script>
+
+    <section id="home" class="w3-mobile w3-display-container w3-animate-opacity" style="background-color: black;">
+        <img class="mySlides" src="ProfilePics/coder.jpg" style="width:100%;height: 400px;">
+        <img class="mySlides" src="ProfilePics/traveler.jpg" style="width:100%;height: 400px;">
+    </section>
+
+    <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) { myIndex = 1 }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 4000); // Change image every 2 seconds
+        }
+    </script>
+
+
+    <section id="about" class="w3-container w3-center w3-mobile " style="min-height: 300px;">
+        <div class=" w3-padding" style="max-width: 800px;margin: auto;text-align: justify;">
+            <h1>ABOUT ME</h1>
+            <img src="ProfilePics/osama_profile.jpg" class="w3-hover-grayscale"
+                style="width:150px;float: left;margin-right: 25px;">
+            <p style="font-size: 18spx;">I'm currently in my Second year at the National University of Sciences and
+                Technology in Islamabad,
+                working on a Bachelor's
+                degree in Computer Science. Recently I've been working on mobile development, web development, and
+                exploring Machine Learning.
+
+                Before moving to Islamabad, I lived in Jeddah, Saudi Arabia. I attended Al Waha International School
+                and
+                graduated with an A-Level degree with Computer Science as the major subject</p>
+        </div>
+    </section>
+
+    <section id="skills" class="w3-container w3-black w3-center w3-mobile ">
+        <div class=" w3-padding" style="max-width: 800px;margin: auto;text-align: justify;">
+            <h1>Skills</h1>
+            <h3>Programming Languages:</h3>
+            <span class="skillProg">
+                <i class="devicon-javascript-plain colored"></i>
+            </span>
+            <span class="skillProg">
+                <i class="devicon-java-plain-wordmark colored"></i>
+            </span>
+            <span class="skillProg"> <i class="devicon-python-plain-wordmark colored"></i></span>
+            <span class="skillProg"> <i class="devicon-cplusplus-plain colored"></i></span>
+            <span class="skillProg"> <i class="devicon-android-plain-wordmark colored"></i></span>
+            <span class="skillProg"> <i class="devicon-github-plain-wordmark"></i></span>
+            <span class="skillProg"> <i class="devicon-git-plain-wordmark colored"></i></span>
+            <span class="skillProg"> <i class="devicon-html5-plain-wordmark colored"></i></span>
+            <span class="skillProg"> <i class="devicon-css3-plain-wordmark colored"></i></span>
+            <span class="skillProg"> <i class="devicon-jquery-plain-wordmark"></i></span>
+            <span class="skillProg"> <i class="devicon-mysql-plain-wordmark"></i></span>
+            <span class="skillProg"> <i class="devicon-php-plain"></i></span>
+
+        </div>
+    </section>
+
+    <section id="projects" class="w3-container  w3-mobile " style="min-height: 300px;">
+        <div class=" w3-padding" style="max-width: 800px;margin: auto;text-align: justify;">
+            <h1>Projects</h1>
+            <div class="w3-bar w3-border ">
+                <button class="tablink w3-bar-item w3-center w3-button w3-black" style="width:33.33%"
+                    onclick="openProject(event,'mobile-dev')">Mobile Dev</button>
+                <button class="tablink w3-bar-item w3-button" style="width:33.33%"
+                    onclick="openProject(event,'web-dev')">Web
+                    Dev</button>
+                <button class="tablink w3-bar-item w3-button" style="width:33.33%"
+                    onclick="openProject(event,'other')">Other
+                    Dev</button>
+            </div>
+            <div class="project w3-container w3-border" id="mobile-dev">
+                <h3>Mobile Dev</h3>
+            </div>
+            <div class="project w3-container w3-border" style="display:none" id="web-dev">
+                <h3>Web Dev</h3>
+            </div>
+            <div class="project w3-container w3-border" style="display:none" id="other">
+                <h3>Other Dev</h3>
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+
+        function openProject(event, projectName) {
+            var i, x, tablinks;
+            x = document.getElementsByClassName("project");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < x.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" w3-black", "");
+            }
+            document.getElementById(projectName).style.display = "block";
+            console.log("idhar");
+            event.currentTarget.className += " w3-black";
+        }
+
+    </script>
+
+    <section id="contact" class="w3-mobile w3-container w3-border w3-black w3-padding">
+
+        <h1 class="we-xxlarge w3-center">GET IN TOUCH</h1>
+
+        <div class="w3-center w3-black w3-padding">
+            <div>
+                <a href="https://www.facebook.com/oafzal97" target="_blank"> <i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/oafzal2/" target="_blank"> <i class="fab fa-instagram"></i></a
+                <a href="" target="_blank"> <i class="fas fa-at"></i></a>
+            </div>
+            <a class="twitter-timeline" data-width="250" data-height="350" data-theme="dark"
+                href="https://twitter.com/OAfzal2/lists/timeline?ref_src=twsrc%5Etfw">A Twitter List by OAfzal2</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
+
+    </section>
+
+
+
+
+
+</body>
+
+</html>

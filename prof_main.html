@@ -10,55 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet"
         href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
-
-
-    <style>
-        #skills i {
-            font-size: 35px;
-            /* margin:25px; */
-        }
-
-        #contact i:hover {
-            color: white;
-            /* margin:25px; */
-        }
-
-        #contact i {
-            font-size: 35px;
-            color: gold;
-            margin: 15px;
-        }
-
-        .skillProg {
-            float: left;
-            margin: 30px;
-        }
-
-        .active,
-        .nav-item:hover {
-
-            background-color: #FE9900;
-            color: white;
-        }
-
-        .floating-menu {
-            background-color: gold;
-            width: 180px;
-            top: 70%;
-            right: 15px;
-            z-index: 100;
-            position: fixed;
-        }
-
-        @media screen and (max-width: 600px) {
-
-            .floating-menu {
-                background-color: gold;
-                width: 130px;
-                position: static;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 
 
 </head>
@@ -69,10 +21,8 @@
         <div class="w3-bar" id="nav-container">
             <span class="w3-Large  w3-mobile">
                 <a href="#home" class="active w3-bar-item w3-button w3-mobile nav-item w3-hover-black">HOME</a>
-                <a href="#about" class="w3-bar-item w3-button w3-mobile nav-item  w3-hover-black">ABOUT ME</a>
-                <a href="#skills" class="w3-bar-item w3-button w3-mobile nav-item  w3-hover-black">SKILLS</a>
                 <a href="#projects" class="w3-bar-item w3-button w3-mobile nav-item  w3-hover-black">PROJECTS</a>
-                <a href="#contact" class="w3-bar-item w3-button w3-mobile nav-item  w3-hover-black">CONTACT ME</a>
+                <a href="#blog" class="w3-bar-item w3-button w3-mobile nav-item  w3-hover-black">BLOG</a>
             </span>
         </div>
     </div>
@@ -134,13 +84,57 @@
         }
     </script>
 
+    <a href="#about" id="arrow-down" class="w3-bar-item  w3-button w3-padding-large"><i
+            class="fas fa-chevron-down"></i></a>
+
     <div class="floating-menu w3-bar-block w3-mobile">
-        <a href="#" class="w3-bar-item w3-button w3-padding-large">Home</a>
-        <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
-        <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
-        <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+        <a href="#home" class="w3-bar-item  w3-button w3-padding-large"><i
+                class="fas fa-home w3-margin-right"></i>HOME</a>
+        <a href="#about" class="w3-bar-item  w3-button w3-padding-large"><i
+                class="fas fa-user-secret w3-margin-right"></i>ABOUT ME</a>
+        <a href="#skills" class="w3-bar-item  w3-button w3-padding-large"><i
+                class="fas fa-graduation-cap w3-margin-right"></i>SKILLS</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large"><i
+                class="fas fa-phone w3-margin-right"></i>CONTACT ME</a>
     </div>
 
+    <script>
+
+        $(document).ready(function () {
+            $(".floating-menu").hide()
+            $("#arrow-down").on("click", function () {
+
+                var target = $("#about");
+                if (target.length) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                }
+            })
+            $(window).scroll(function () {
+
+                // .scrollTop() retrieves vertical position of the scroll bar for the first element in a set of matched elements
+                var scroll = $(window).scrollTop();
+
+                var objectSelect = $('#home');
+
+                // .offset() retrieves current position of element relative to document
+                var objectPosition = objectSelect.offset().top;
+
+                if (scroll > objectPosition) {
+                    $("#arrow-down").fadeOut();
+                    $('.floating-menu').fadeIn();
+                } else {
+                    $("#arrow-down").fadeIn();
+                    $('.floating-menu').fadeOut();
+                }
+            });
+
+        })
+
+
+    </script>
 
 
     <section id="about" class="w3-container w3-center w3-mobile " style="min-height: 300px;">
@@ -162,7 +156,7 @@
 
     <section id="skills" class="w3-container w3-black w3-center w3-mobile ">
         <div class=" w3-padding" style="max-width: 800px;margin: auto;text-align: justify;">
-            <h1>Skills</h1>
+            <h1>SKILLS</h1>
             <h3>Programming Languages:</h3>
             <span class="skillProg">
                 <i class="devicon-javascript-plain colored"></i>

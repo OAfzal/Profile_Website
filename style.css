@@ -1,142 +1,85 @@
-body,
-html {
-
-    height: 100%;
-    /* background-color:#f1f1f1; */
+#skills i {
+    font-size: 35px;
+    /* margin:25px; */
 }
 
-.bg {
-
-    /* background-image: url("background_image.jpg"); */
-    /* background-image: url("blur.jpeg");
-    height: 100%;
-
-    background-position: center;
-    background-repeat: repeat-x; */
-    /* background-size: cover; */
+#contact i:hover {
+    color: white;
+    /* margin:25px; */
 }
 
-.column {
-    width: 100%;
+#contact i {
+    font-size: 35px;
+    color: gold;
+    margin: 15px;
+}
+
+.skillProg {
     float: left;
+    margin: 30px;
 }
 
-.nav {
-
-    width: 15%;
-}
-
-ul {
-    font-family: Rubik, Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
-    list-style-type: none;
-    background-color: #f1f1f1;
-    font-weight: bolder;
-    width: 200px;
-    margin-top: 10%;
-    margin-left: 5%;
-    padding: 0;
-    overflow: auto;
-}
-
-li a {
-    display: block;
-    color: black;
-    padding: 8px 16px;
-    text-decoration: none;
-
-}
-
-li a:hover {
-    background-color: darkblue;
-    color:white;
-}
-
-.side {
-    width: 25%;
-    margin-top: 1.5%;
-    background-color: #f1f1f1;
-}
-
-.main {
-    width: 33%;
-    margin: 1.5%;
-    padding: 1.0%;
-    background-color: #f1f1f1;
-}
-
-.education h1{
-
-    color: darkblue;
-    font-family: Rubik, Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
-    font-weight: bold;
-}
-
-.education h2{
-
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: large;
-    margin:0px;
-}
-
-
-.row::after {
-    display: table;
-    clear: both;
-}
-
-#ProfilePic {
-    margin-left: 25%;
-    margin-top: 25%;
-    display: block;
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    border: white solid;
-}
-
-#aboutMe {
-    font-family: Rubik, Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
-    text-align: center;
-    font-weight: bold;
-    color: darkblue;
-}
-
-.description {
-
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
-}
-
-.contact-box {
+.active,
+.nav-item:hover {
 
     background-color: darkblue;
     color: white;
-    padding: 0.5%;
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.logos a {
 
-    color: black;
+@keyframes example {
+    0% {
+        transform: translate(0px, 0px);
+    }
+
+    50% {
+        transform: translate(0px, 10px);
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+    }
 }
 
-.logos a:hover {
-
-    color: darkblue;
-}
-
-#timeContainer{
-
-    color:white;
+#arrow-down {
     background-color: darkblue;
-    text-align: center;
-    font-size:xx-large;
+    color: white;
+    /* width: 180px; */
+    bottom: 0%;
+    right: 5%;
+    z-index: 100;
+    position: fixed;
 }
 
-#date{
+#arrow-down i {
+    animation: example;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    position: relative;
+    padding: 10px;
+    font-size: 45px;
+}
 
-    font-size:large;
+.floating-menu {
+    background-color: darkblue;
+    color: white;
+    /* width: 180px; */
+    top: 50%;
+    right: 15px;
+    z-index: 100;
+    position: fixed;
+}
 
+.floating-menu i {
+    padding: 10px;
+    font-size: 25px;
+}
+
+@media screen and (max-width: 600px) {
+
+    .floating-menu {
+        background-color: gold;
+        width: 130px;
+        position: static;
+    }
 }

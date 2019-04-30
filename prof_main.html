@@ -10,57 +10,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet"
         href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
-
-
-    <style>
-        #skills i {
-            font-size: 35px;
-            /* margin:25px; */
-        }
-
-        #contact i {
-            font-size: 35px;
-            color: gold;
-            margin: 15px;
-        }
-
-        .skillProg {
-            float: left;
-            margin: 30px;
-        }
-
-        .active,
-        .nav-item:hover {
-
-            background-color: #FE9900;
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 
 
 </head>
 
 <body>
 
-    <div id="header" class="w3-white w3-padding w3-center w3-container w3-top ">
+    <div id="header" class="w3-white w3-padding w3-center w3-container">
         <div class="w3-bar" id="nav-container">
             <span class="w3-Large  w3-mobile">
                 <a href="#home" class="active w3-bar-item w3-button w3-mobile nav-item w3-hover-black">HOME</a>
-                <a href="#about" class="w3-bar-item w3-button w3-mobile nav-item  w3-hover-black">ABOUT ME</a>
-                <a href="#skills" class="w3-bar-item w3-button w3-mobile nav-item  w3-hover-black">SKILLS</a>
                 <a href="#projects" class="w3-bar-item w3-button w3-mobile nav-item  w3-hover-black">PROJECTS</a>
-                <a href="#contact" class="w3-bar-item w3-button w3-mobile nav-item  w3-hover-black">CONTACT ME</a>
+                <a href="#blog" class="w3-bar-item w3-button w3-mobile nav-item  w3-hover-black">BLOG</a>
             </span>
         </div>
     </div>
-
-    <!-- <script>
-
-        nav_container = $(".nav-item").on("click", function () {
-            $(".active").removeClass("active");
-            $(this).addClass("active");
-        })
-    </script> -->
 
     <script>
 
@@ -98,8 +63,8 @@
     </script>
 
     <section id="home" class="w3-mobile w3-display-container w3-animate-opacity" style="background-color: black;">
-        <img class="mySlides" src="ProfilePics/coder.jpg" style="width:100%;height: 400px;">
-        <img class="mySlides" src="ProfilePics/traveler.jpg" style="width:100%;height: 400px;">
+        <img class="mySlides" src="ProfilePics/coder.jpg" style="width:100%;height: 100%;">
+        <img class="mySlides" src="ProfilePics/traveler.jpg" style="width:100%;height: 100%;">
     </section>
 
     <script>
@@ -117,6 +82,58 @@
             x[myIndex - 1].style.display = "block";
             setTimeout(carousel, 4000); // Change image every 2 seconds
         }
+    </script>
+
+    <a href="#about" id="arrow-down" class="w3-bar-item  w3-button w3-padding-large"><i
+            class="fas fa-chevron-down"></i></a>
+
+    <div class="floating-menu w3-bar-block w3-mobile">
+        <a href="#home" class="w3-bar-item  w3-button w3-padding-large"><i
+                class="fas fa-home w3-margin-right"></i>HOME</a>
+        <a href="#about" class="w3-bar-item  w3-button w3-padding-large"><i
+                class="fas fa-user-secret w3-margin-right"></i>ABOUT ME</a>
+        <a href="#skills" class="w3-bar-item  w3-button w3-padding-large"><i
+                class="fas fa-graduation-cap w3-margin-right"></i>SKILLS</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large"><i
+                class="fas fa-phone w3-margin-right"></i>CONTACT ME</a>
+    </div>
+
+    <script>
+
+        $(document).ready(function () {
+            $(".floating-menu").hide()
+            $("#arrow-down").on("click", function () {
+
+                var target = $("#about");
+                if (target.length) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                }
+            })
+            $(window).scroll(function () {
+
+                // .scrollTop() retrieves vertical position of the scroll bar for the first element in a set of matched elements
+                var scroll = $(window).scrollTop();
+
+                var objectSelect = $('#home');
+
+                // .offset() retrieves current position of element relative to document
+                var objectPosition = objectSelect.offset().top;
+
+                if (scroll > objectPosition) {
+                    $("#arrow-down").fadeOut();
+                    $('.floating-menu').fadeIn();
+                } else {
+                    $("#arrow-down").fadeIn();
+                    $('.floating-menu').fadeOut();
+                }
+            });
+
+        })
+
+
     </script>
 
 
@@ -139,7 +156,7 @@
 
     <section id="skills" class="w3-container w3-black w3-center w3-mobile ">
         <div class=" w3-padding" style="max-width: 800px;margin: auto;text-align: justify;">
-            <h1>Skills</h1>
+            <h1>SKILLS</h1>
             <h3>Programming Languages:</h3>
             <span class="skillProg">
                 <i class="devicon-javascript-plain colored"></i>
@@ -213,8 +230,8 @@
         <div class="w3-center w3-black w3-padding">
             <div>
                 <a href="https://www.facebook.com/oafzal97" target="_blank"> <i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/oafzal2/" target="_blank"> <i class="fab fa-instagram"></i></a
-                <a href="" target="_blank"> <i class="fas fa-at"></i></a>
+                <a href="https://www.instagram.com/oafzal2/" target="_blank"> <i class="fab fa-instagram"></i></a <a
+                    href="" target="_blank"> <i class="fas fa-at"></i></a>
             </div>
             <a class="twitter-timeline" data-width="250" data-height="350" data-theme="dark"
                 href="https://twitter.com/OAfzal2/lists/timeline?ref_src=twsrc%5Etfw">A Twitter List by OAfzal2</a>

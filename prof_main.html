@@ -21,46 +21,11 @@
         <div class="w3-bar" id="nav-container">
             <span class="w3-Large  w3-mobile">
                 <a href="#home" class="active w3-bar-item w3-button w3-mobile nav-item w3-hover-black">HOME</a>
-                <a href="#projects" class="w3-bar-item w3-button w3-mobile nav-item  w3-hover-black">PROJECTS</a>
+                <a href="projects.html" class="w3-bar-item w3-button w3-mobile nav-item  w3-hover-black">PROJECTS</a>
                 <a href="#blog" class="w3-bar-item w3-button w3-mobile nav-item  w3-hover-black">BLOG</a>
             </span>
         </div>
     </div>
-
-    <script>
-
-        // console.log($("#nav-container").find("a"));
-
-        var topMenu = $("#nav-container"),
-            topMenuHeight = topMenu.outerHeight() + 15,
-            // All list items
-            menuItems = topMenu.find("a"),
-            // Anchors corresponding to menu items
-            scrollItems = menuItems.map(function () {
-                var item = $($(this).attr("href"));
-                if (item.length) { return item; }
-            });
-
-        $(window).scroll(function () {
-            // Get container scroll position
-            var fromTop = $(this).scrollTop() + topMenuHeight;
-            console.log()
-
-            // Get id of current scroll item
-            var cur = scrollItems.map(function () {
-                if ($(this).offset().top < fromTop)
-                    return this;
-            });
-            // Get the id of the current element
-            cur = cur[cur.length - 1];
-            var id = cur && cur.length ? cur[0].id : "";
-            // Set/remove active class
-            menuItems
-                .removeClass("active")
-                .end().filter("[href='#" + id + "']").addClass("active");
-        });
-
-    </script>
 
     <section id="home" class="w3-mobile w3-display-container w3-animate-opacity" style="background-color: black;">
         <img class="mySlides" src="ProfilePics/coder.jpg" style="width:100%;height: 100%;">
@@ -87,65 +52,87 @@
     <a href="#about" id="arrow-down" class="w3-bar-item  w3-button w3-padding-large"><i
             class="fas fa-chevron-down"></i></a>
 
-    <div class="floating-menu w3-bar-block w3-mobile">
-        <a href="#home" class="w3-bar-item  w3-button w3-padding-large"><i
-                class="fas fa-home w3-margin-right"></i>HOME</a>
-        <a href="#about" class="w3-bar-item  w3-button w3-padding-large"><i
-                class="fas fa-user-secret w3-margin-right"></i>ABOUT ME</a>
-        <a href="#skills" class="w3-bar-item  w3-button w3-padding-large"><i
-                class="fas fa-graduation-cap w3-margin-right"></i>SKILLS</a>
-        <a href="#contact" class="w3-bar-item w3-button w3-padding-large"><i
-                class="fas fa-phone w3-margin-right"></i>CONTACT ME</a>
+    <!-- <i class="fas fa-home w3-margin-right"></i> -->
+    <!-- <i class="fas fa-user-secret w3-margin-right"></i> -->
+    <!-- <i class="fas fa-graduation-cap w3-margin-right"></i> -->
+    <!-- <i class="fas fa-phone w3-margin-right"></i> -->
+    <!-- <i class="fas fa-phone w3-margin-right"></i> -->
+
+    <div class="floating-menu w3-bar-block w3-mobile w3-gold">
+        <a href="#home" class="w3-bar-item  w3-button w3-padding-large">HOME</a>
+        <a href="#about" class="w3-bar-item  w3-button w3-padding-large">ABOUT</a>
+        <a href="#skills" class="w3-bar-item  w3-button w3-padding-large">SKILLS</a>
+        <a href="#resume" class="w3-bar-item w3-button w3-padding-large">RESUME</a>
+
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large">CONTACT ME</a>
+
     </div>
 
     <script>
 
         $(document).ready(function () {
             $(".floating-menu").hide()
-            $("#arrow-down").on("click", function () {
+            if (screen.width > 600) {
 
-                var target = $("#about");
-                if (target.length) {
-                    event.preventDefault();
+                $("#arrow-down").on("click", function () {
+
+                    var target = $("#about");
+                    if (target.length) {
+                        event.preventDefault();
+                        $('html, body').stop().animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                    }
+                })
+
+                $(".floating-menu a").on("click", function () {
+
+                    var target = $($(this).attr("href"));
                     $('html, body').stop().animate({
                         scrollTop: target.offset().top
                     }, 1000);
-                }
-            })
-            $(window).scroll(function () {
+                })
 
-                // .scrollTop() retrieves vertical position of the scroll bar for the first element in a set of matched elements
-                var scroll = $(window).scrollTop();
+                $(window).scroll(function () {
 
-                var objectSelect = $('#home');
+                    // .scrollTop() retrieves vertical position of the scroll bar for the first element in a set of matched elements
+                    var scroll = $(window).scrollTop();
 
-                // .offset() retrieves current position of element relative to document
-                var objectPosition = objectSelect.offset().top;
+                    var objectSelect = $('#home');
 
-                if (scroll > objectPosition) {
-                    $("#arrow-down").fadeOut();
-                    $('.floating-menu').fadeIn();
-                } else {
-                    $("#arrow-down").fadeIn();
-                    $('.floating-menu').fadeOut();
-                }
-            });
+                    // .offset() retrieves current position of element relative to document
+                    var objectPosition = objectSelect.offset().top;
 
+                    if (scroll > objectPosition) {
+                        $("#arrow-down").fadeOut();
+                        $('.floating-menu').fadeIn();
+                    } else {
+                        $("#arrow-down").fadeIn();
+                        $('.floating-menu').fadeOut();
+                    }
+                });
+
+            }
+            else {
+                $("#arrow-down").hide();
+            }
         })
 
 
     </script>
 
-
-    <section id="about" class="w3-container w3-center w3-mobile " style="min-height: 300px;">
+    <section id="about" class="w3-container w3-center w3-mobile " style="min-height: 400px;">
         <div class=" w3-padding" style="max-width: 800px;margin: auto;text-align: justify;">
-            <h1>ABOUT ME</h1>
-            <img src="ProfilePics/osama_profile.jpg" class="w3-hover-grayscale"
-                style="width:150px;float: left;margin-right: 25px;">
-            <p style="font-size: 18spx;">I'm currently in my Second year at the National University of Sciences and
+            <h1 style="font-size: 48px; font-weight: bold;">About Me / <span>
+                    <h3 class="w3-text" style="display: inline">Who am I</h3>
+                </span> </h1>
+            <img id="profile-pic" src="ProfilePics/osama_profile.jpg" class="w3-hover-grayscale"
+                style="float: left;margin-right: 25px;">
+            <p style="font-size: 15px;">I'm currently in my Second year at the National University of Sciences and
                 Technology in Islamabad,
                 working on a Bachelor's
-                degree in Computer Science. Recently I've been working on mobile development, web development, and
+                degree in Computer Science.<br><br> Recently I've been working on mobile development, web development,
+                and
                 exploring Machine Learning.
 
                 Before moving to Islamabad, I lived in Jeddah, Saudi Arabia. I attended Al Waha International School
@@ -154,11 +141,40 @@
         </div>
     </section>
 
-    <section id="skills" class="w3-container w3-black w3-center w3-mobile ">
+    <section id="skills" class=" w3-white w3-container  w3-center w3-mobile" style="min-height: 400px;">
         <div class=" w3-padding" style="max-width: 800px;margin: auto;text-align: justify;">
-            <h1>SKILLS</h1>
-            <h3>Programming Languages:</h3>
-            <span class="skillProg">
+            <h1 style="font-size: 48px; font-weight: bold;">Skills / <span>
+                    <h3 class="w3-text" style="display: inline">What I Know</h3>
+                </span></h1>
+            <div class="w3-container">
+
+                <h3 class="w3-padding">Programming Languages:</h3>
+                <span class="skillProg"> <i class="devicon-python-plain-wordmark colored"></i></span>
+                <span class="skillProg"> <i class="devicon-cplusplus-plain colored"></i></span>
+                <span class="skillProg">
+                    <i class="devicon-java-plain-wordmark colored"></i>
+                </span>
+                <span class="skillProg">
+                    <i class="devicon-javascript-plain colored"></i>
+                </span>
+            </div>
+
+            <div class="w3-container">
+                <h3 class="w3-padding">Mobile Development:</h3>
+                <span class="skillProg"> <i class="devicon-android-plain-wordmark colored"></i></span>
+                <span class="skillprog"><i class="devicon-swift-plain-wordmark colored"></i>
+                </span>
+                <span class="skillProg"> <i class="devicon-mysql-plain-wordmark"></i></span>
+
+            </div>
+            <!-- <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">Javascript</span>
+            <span class="skill">C++/C</span>
+            <span class="skill">Python</span>
+            <span class="skill">Flutter</span>
+            <span class="skill">Android</span> -->
+            <!-- <span class="skillProg">
                 <i class="devicon-javascript-plain colored"></i>
             </span>
             <span class="skillProg">
@@ -173,67 +189,87 @@
             <span class="skillProg"> <i class="devicon-css3-plain-wordmark colored"></i></span>
             <span class="skillProg"> <i class="devicon-jquery-plain-wordmark"></i></span>
             <span class="skillProg"> <i class="devicon-mysql-plain-wordmark"></i></span>
-            <span class="skillProg"> <i class="devicon-php-plain"></i></span>
-
+            <span class="skillProg"> <i class="devicon-php-plain"></i></span> -->
         </div>
     </section>
 
-    <section id="projects" class="w3-container  w3-mobile " style="min-height: 300px;">
-        <div class=" w3-padding" style="max-width: 800px;margin: auto;text-align: justify;">
-            <h1>Projects</h1>
-            <div class="w3-bar w3-border ">
-                <button class="tablink w3-bar-item w3-center w3-button w3-black" style="width:33.33%"
-                    onclick="openProject(event,'mobile-dev')">Mobile Dev</button>
-                <button class="tablink w3-bar-item w3-button" style="width:33.33%"
-                    onclick="openProject(event,'web-dev')">Web
-                    Dev</button>
-                <button class="tablink w3-bar-item w3-button" style="width:33.33%"
-                    onclick="openProject(event,'other')">Other
-                    Dev</button>
-            </div>
-            <div class="project w3-container w3-border" id="mobile-dev">
-                <h3>Mobile Dev</h3>
-            </div>
-            <div class="project w3-container w3-border" style="display:none" id="web-dev">
-                <h3>Web Dev</h3>
-            </div>
-            <div class="project w3-container w3-border" style="display:none" id="other">
-                <h3>Other Dev</h3>
-            </div>
-        </div>
 
+
+    <section id="resume" class="w3-container w3-center w3-mobile " style="min-height: 400px;">
+        <div class=" w3-padding w3-center" style="max-width: 800px;margin: auto;">
+            <h1 class="w3-left-align" style="font-size: 48px; font-weight: bold;">Resume / <span>
+                    <h3 class="w3-text" style="display: inline">Me Life</h3>
+                </span></h1>
+            <div class="container">
+                <div class="page-header">
+                    <h1 id="timeline">Education</h1>
+                </div>
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Computer Science (Undergrad)</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p><strong>National University Of Sciences and Technology</strong></h5>
+                                    <p><em>2017-2021</em> </p>
+                                    <p class="w3-left-align"> Courses in the areas of Artificial intelligence, Compiler
+                                        construction, theory
+                                        of automata and formal languages, scientific computing and analysis of
+                                        algorithms. </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">A Levels (High School)</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p><strong>AL Waha International School Jeddah,KSA</strong></h5>
+                                    <p><em>2015-2017</em> </p>
+                                    <p class="w3-left-align"> <strong>Courses:</strong></p>
+                                    <ul>
+                                        <li>Mathematics</li>
+                                        <li>Physics</li>
+                                        <li>Chemistry</li>
+                                        <li>Computer Science</li>
+                                    </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class=" w3-padding w3-center" style="max-width: 800px;margin: auto;text-align: justify;">
+                <a href="Osama's Resume.pdf" download><button id="download_cv">DOWNLOAD MY RESUME<i
+                            class="fas fa-cloud-download-alt"></i></button></a></div>
+        </div>
     </section>
 
-    <script>
+    <!-- <section id="downloads" class="w3-margin w3-container w3-center w3-mobile " style="min-height: 300px;">
+        <h1 style="font-size: 48px; font-weight: bold;">RESUME</h1>
+        <div class=" w3-padding w3-center" style="max-width: 800px;margin: auto;text-align: justify;">
+            <a href="Osama's Resume.pdf" download><button id="download_cv">DOWNLOAD<i
+                        class="fas fa-cloud-download-alt"></i></button></a>
+    </section> -->
 
-        function openProject(event, projectName) {
-            var i, x, tablinks;
-            x = document.getElementsByClassName("project");
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablink");
-            for (i = 0; i < x.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" w3-black", "");
-            }
-            document.getElementById(projectName).style.display = "block";
-            console.log("idhar");
-            event.currentTarget.className += " w3-black";
-        }
+    <section id="contact" class="w3-mobile w3-container w3-border w3-orange w3-padding">
 
-    </script>
+        <h1 style="font-size: 48px; font-weight: bold;" class="we-xxlarge w3-center">GET IN TOUCH</h1>
 
-    <section id="contact" class="w3-mobile w3-container w3-border w3-black w3-padding">
-
-        <h1 class="we-xxlarge w3-center">GET IN TOUCH</h1>
-
-        <div class="w3-center w3-black w3-padding">
-            <div>
+        <div class="w3-center  w3-padding w3-orange">
+            <div id="logos">
                 <a href="https://www.facebook.com/oafzal97" target="_blank"> <i class="fab fa-facebook"></i></a>
                 <a href="https://www.instagram.com/oafzal2/" target="_blank"> <i class="fab fa-instagram"></i></a <a
                     href="" target="_blank"> <i class="fas fa-at"></i></a>
             </div>
-            <a class="twitter-timeline" data-width="250" data-height="350" data-theme="dark"
+            <!-- <a class="twitter-timeline" data-width="250" data-height="350" data-theme="dark"
+                href="https://twitter.com/OAfzal2/lists/timeline?ref_src=twsrc%5Etfw">A Twitter List by OAfzal2</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+
+            <a class="twitter-timeline" data-width="250" data-height="325"
                 href="https://twitter.com/OAfzal2/lists/timeline?ref_src=twsrc%5Etfw">A Twitter List by OAfzal2</a>
             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>

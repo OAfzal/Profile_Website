@@ -1,0 +1,109 @@
+<html>
+
+<head>
+    <title>Osama Mohammed Afzal | Projects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div id="header" class="w3-white w3-padding w3-center w3-container">
+        <div class="w3-bar" id="nav-container">
+            <span class="w3-Large  w3-mobile">
+                <a href="prof_main.html" class="w3-bar-item w3-button w3-mobile nav-item w3-hover-black">HOME</a>
+                <a href="projects.html"
+                    class="active w3-bar-item w3-button w3-mobile nav-item  w3-hover-black">PROJECTS</a>
+                <a href="#blog" class="w3-bar-item w3-button w3-mobile nav-item  w3-hover-black">BLOG</a>
+            </span>
+        </div>
+    </div>
+
+
+
+    <section id="projects" class="w3-container  w3-mobile " style="min-height: 300px;">
+        <div class=" w3-padding" style="max-width: 800px;margin: auto;text-align: justify;">
+            <h1>Projects</h1>
+            <div class="w3-bar w3-border ">
+                <button class="tablink w3-bar-item w3-center w3-button w3-black" style="width:33.33%"
+                    onclick="openProject(event,'mobile-dev')">Mobile Dev</button>
+                <button class="tablink w3-bar-item w3-button" style="width:33.33%"
+                    onclick="openProject(event,'web-dev')">Web
+                    Dev</button>
+                <button class="tablink w3-bar-item w3-button" style="width:33.33%"
+                    onclick="openProject(event,'other')">Other
+                    Dev</button>
+            </div>
+            <div class="project w3-container w3-border" id="mobile-dev">
+                <h3>Mobile Dev</h3>
+            </div>
+            <div class="project w3-container w3-border" style="display:none" id="web-dev">
+                <h3>Web Dev</h3>
+            </div>
+            <div class="project w3-container w3-border" style="display:none" id="other">
+                <div class="w3-container proj">
+
+                    <h3 style="font-weight:bolder">Senseil</h3>
+                    <div>
+                        <img style="margin: 25px;width:150px;height:150px;border: solid;" src="ProfilePics/senseil.jpg"
+                            alt="">
+                        <h4 style="float: left;">An AI-based precision farming system that analyzes soil and
+                            determines if it's vulnerable to erosion or not and offers
+                            appropriate customized advice courtesy of on-board experts.</h4>
+                        <span class="skill">Flutter</span>
+                        <span class="skill">Flask</span>
+                        <span class="skill">Python</span>
+                    </div>
+                </div>
+                <hr>
+                <div class="w3-container proj">
+
+                    <h3 style="font-weight:bolder">Ark Angel</h3>
+                    <div>
+                        <img style="margin: 25px;width:150px;height:150px;border: solid;" src="ProfilePics/senseil.jpg"
+                            alt="">
+                        <p style="float: left;">An AI-based precision farming system that analyzes soil and
+                            determines if it's vulnerable to erosion or not and offers
+                            appropriate customized advice courtesy of on-board experts.</p>
+                        <span class="skill">Flutter</span>
+                        <span class="skill">Flask</span>
+                        <span class="skill">Python</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+
+        function openProject(event, projectName) {
+            var i, x, tablinks;
+            x = document.getElementsByClassName("project");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < x.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" w3-black", "");
+            }
+            document.getElementById(projectName).style.display = "block";
+            console.log("idhar");
+            event.currentTarget.className += " w3-black";
+        }
+    </script>
+
+
+
+</body>
+
+</html>
